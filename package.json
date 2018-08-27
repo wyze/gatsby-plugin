@@ -1,0 +1,61 @@
+{
+  "name": "@wyze/gatsby-plugin",
+  "version": "0.0.0",
+  "description": "A Gatsby plugin for my personal website.",
+  "license": "MIT",
+  "repository": "wyze/gatsby-plugin",
+  "author": {
+    "name": "Neil Kistner",
+    "email": "neil.kistner@gmail.com",
+    "url": "neilkistner.com"
+  },
+  "main": "gatsby-node.js",
+  "scripts": {
+    "build": "rio -o gatsby-node.js src/index.ts",
+    "clean": "rimraf gatsby-node.js",
+    "prebuild": "yarn clean",
+    "prettier": "prettier --write \"src/**/*.ts\"",
+    "preversion": "yarn build",
+    "test": "jest",
+    "version": "write-changelog"
+  },
+  "files": [
+    "gatsby-node.js"
+  ],
+  "keywords": [
+    "gatsby",
+    "gatsby-plugin"
+  ],
+  "publishConfig": {
+    "access": "public"
+  },
+  "devDependencies": {
+    "@types/jest": "^23.3.1",
+    "@types/node": "^10.9.2",
+    "@wyze/rio": "^1.0.0",
+    "jest": "^23.5.0",
+    "mock-fs": "^4.6.0",
+    "prettier": "^1.14.2",
+    "rimraf": "^2.6.2",
+    "ts-jest": "^23.1.4",
+    "typescript": "^3.0.1",
+    "write-changelog": "^1.1.0"
+  },
+  "jest": {
+    "moduleFileExtensions": [
+      "js",
+      "ts"
+    ],
+    "testEnvironment": "node",
+    "testRegex": "(/__tests__/.*|(\\.|/)(test|spec))\\.ts$",
+    "transform": {
+      "^.+\\.ts$": "ts-jest"
+    }
+  },
+  "prettier": {
+    "arrowParens": "always",
+    "semi": false,
+    "singleQuote": true,
+    "trailingComma": "es5"
+  }
+}
